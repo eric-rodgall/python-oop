@@ -4,7 +4,7 @@ from typing import Protocol
 class RequestProtocol(Protocol): 
     # Se define el metodo que se tiene que definir en cada clase
     def borrow_book(self, title : str) -> str:
-        """Metodo que debe implementar cualquier solicitante"""
+        """Metodo que debe implementar cualquier Clase"""
         ...
 
 class User:
@@ -45,13 +45,4 @@ class Teacher(User):
         return f"Request to borrow {title} by user {self.name}"
     
 
-student = Student("Eric", "E1", "ISC")
-teacher = Teacher("Carmen", "T1", "IE")
-
-print(student.borrow_book("python 101"))
-print(student.borrow_book("python 102"))
-print(student.borrow_book("python 103"))
-print(student.borrow_book("python 104"))
-
-print(student.return_book("python 102"))
 
